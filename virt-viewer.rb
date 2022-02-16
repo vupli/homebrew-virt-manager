@@ -25,7 +25,7 @@ class VirtViewer < Formula
         -Dlibvirt=enabled
         -Dvnc=enabled
         -Dspice=enabled
-        -Dovirt=disabled
+        -Dovirt=enabled
         -Dvte=enabled
         -Dbash_completion=enabled
       ]
