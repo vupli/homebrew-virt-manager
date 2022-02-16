@@ -4,24 +4,14 @@ class VirtViewer < Formula
   url "https://releases.pagure.org/virt-viewer/virt-viewer-11.0.tar.xz"
   sha256 "a43fa2325c4c1c77a5c8c98065ac30ef0511a21ac98e590f22340869bad9abd0"
 
-  depends_on "intltool" => :build
-  depends_on "libtool" => :build
+  depends_on "gettext" => :build
   depends_on "pkg-config" => :build
 
-  depends_on "atk"
-  depends_on "cairo"
-  depends_on "gdk-pixbuf"
-  depends_on "gettext"
   depends_on "glib"
   depends_on "gtk+3"
   depends_on "gtk-vnc"
-  depends_on "hicolor-icon-theme"
-  depends_on "libvirt"
   depends_on "libvirt-glib"
-  depends_on "pango"
-  depends_on "shared-mime-info"
   depends_on "spice-gtk"
-  depends_on "spice-protocol"
 
   def install
     args = %W[
