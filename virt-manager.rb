@@ -6,26 +6,22 @@ class VirtManager < Formula
   url "https://releases.pagure.org/virt-manager/virt-manager-3.2.0.tar.gz"
   sha256 "2b6fe3d90d89e1130227e4b05c51e6642d89c839d3ea063e0e29475fd9bf7b86"
  
-
+  depends_on "docutils" => :build
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
 
   depends_on "adwaita-icon-theme"
-  depends_on "gtk+3"
   depends_on "gtk-vnc"
   depends_on "gtksourceview4"
-  depends_on "hicolor-icon-theme"
   depends_on "libosinfo"
-  depends_on "libvirt"
   depends_on "libvirt-glib"
   depends_on "libxml2" # need python3 bindings
   depends_on "osinfo-db"
   depends_on "py3cairo"
   depends_on "pygobject3"
-  depends_on "python"
+  depends_on "python@3.10"
   depends_on "spice-gtk"
   depends_on "vte3"
-  depends_on "docutils"
 
   resource "libvirt-python" do
     url "https://libvirt.org/sources/python/libvirt-python-8.0.0.tar.gz"
@@ -76,7 +72,7 @@ class VirtManager < Formula
 
     # install virt-manager commands with PATH set to Python virtualenv environment
     bin.install Dir[libexec/"bin/virt-*"]
-    bin.env_script_all_files(libexec/"bin", :PATH => "#{libexec}/bin:$PATH")
+    bin.env_script_all_files(libexec/"bin", PATH: "#{libexec}/bin:$PATH")
 
     share.install Dir[libexec/"share/man"]
     share.install Dir[libexec/"share/glib-2.0"]
