@@ -24,10 +24,10 @@ class VirtViewer < Formula
       args = %w[
         -Dlibvirt=enabled
         -Dvnc=enabled
-        -Dspice=enabled
+        -Dspice=disabled
         -Dovirt=disabled
         -Dvte=enabled
-        -Dbash_completion=enabled
+        -Dbash_completion=disabled
       ]
 
       system "meson", "..", *std_meson_args, *args
